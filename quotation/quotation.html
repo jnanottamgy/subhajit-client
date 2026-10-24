@@ -3,7 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Subhajit Website Quotation</title>
+<title>Edwin Paul Website Quotation</title>
+<script>
+  /* ============================================================
+     EDIT HERE: your company details. Everything on the quotation
+     (header, "Prepared by", signature line, PDF footer) updates
+     from these values. Fields still on the default text are
+     highlighted in yellow until you change them.
+     ============================================================ */
+  window.QUOTE = {
+    company:    "Your Company Name",
+    tagline:    "Website Design & Development",
+    contact:    "",               // e.g. "+91 98xxx xxxxx · hello@yourcompany.in · GSTIN 27XXXXX"
+    monogram:   "",               // letter(s) in the round seal; blank = first letter of company
+    quoteNo:    "Q/2026-27/001",
+    date:       "24 Oct 2026",
+    validUntil: "08 Nov 2026"
+  };
+</script>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -137,6 +154,14 @@ h2 em { font-style: italic; color: var(--leaf); }
   line-height: 1.1;
 }
 .brand-sub { font-size: var(--step--1); color: var(--muted); }
+.brand-contact { font-family: var(--f-mono); font-size: .72rem; color: var(--muted); margin-top: .2rem; }
+.is-placeholder {
+  background: var(--turmeric-soft);
+  box-shadow: 0 0 0 .12em var(--turmeric-soft);
+  border-bottom: 1.5px dashed var(--turmeric);
+}
+.party .is-placeholder { justify-self: start; }
+.seal.is-placeholder { border-bottom: 1px solid var(--leaf); box-shadow: inset 0 0 0 3px var(--paper), inset 0 0 0 4px var(--turmeric); }
 
 .doc-meta { display: grid; gap: .35rem; text-align: right; }
 .doc-type {
@@ -446,6 +471,7 @@ h2 em { font-style: italic; color: var(--leaf); }
 .sig .line { height: 3.5rem; border-bottom: 1px solid var(--ink); }
 .sig b { font-weight: 600; margin-top: .4rem; }
 .sig span { color: var(--muted); font-size: var(--step--1); }
+.sig b span { color: inherit; font-size: inherit; }
 
 .closing {
   display: flex;
@@ -517,36 +543,37 @@ h2 em { font-style: italic; color: var(--leaf); }
 
   <header class="masthead">
     <div class="brand">
-      <div class="seal" aria-hidden="true">J</div>
+      <div class="seal" aria-hidden="true" data-q="monogram">&amp;</div>
       <div>
-        <div class="brand-name">Jnanottam</div>
-        <div class="brand-sub">Website Design &amp; Development</div>
+        <div class="brand-name" data-q="company">Your Company Name</div>
+        <div class="brand-sub" data-q="tagline">Website Design &amp; Development</div>
+        <div class="brand-contact" data-q="contact">Phone &middot; Email &middot; Address &middot; GSTIN</div>
       </div>
     </div>
     <div class="doc-meta">
       <div class="doc-type">Quotation</div>
       <dl>
-        <dt>Quotation no.</dt><dd>JN/Q/2026-27/001</dd>
-        <dt>Date</dt><dd>24 Oct 2026</dd>
-        <dt>Valid until</dt><dd>08 Nov 2026</dd>
+        <dt>Quotation no.</dt><dd data-q="quoteNo">Q/2026-27/001</dd>
+        <dt>Date</dt><dd data-q="date">24 Oct 2026</dd>
+        <dt>Valid until</dt><dd data-q="validUntil">08 Nov 2026</dd>
       </dl>
     </div>
   </header>
 
   <section class="hero" aria-labelledby="title">
     <p class="eyebrow">Proposal for an online food-ordering website</p>
-    <h1 id="title">Chef Subhajit&rsquo;s kitchen, <em>open for bulk orders.</em></h1>
-    <p class="lede">Design and development of a Shopify website where Subhajit lists his dishes and sells them directly to catering businesses and corporate clients, with menus, ordering, payments and invoices set up for buyers who order in volume.</p>
+    <h1 id="title">Chef Edwin Paul&rsquo;s kitchen, <em>open for bulk orders.</em></h1>
+    <p class="lede">Design and development of a Shopify website where Edwin lists his dishes and sells them directly to catering businesses and corporate clients, with menus, ordering, payments and invoices set up for buyers who order in volume.</p>
 
     <div class="parties">
       <div class="party">
         <span>Prepared for</span>
-        <strong>Subhajit</strong>
+        <strong>Edwin Paul</strong>
         <span>Chef &middot; Catering &amp; corporate food supply</span>
       </div>
       <div class="party">
         <span>Prepared by</span>
-        <strong>Jnanottam</strong>
+        <strong data-q="company">Your Company Name</strong>
         <span>Website design &amp; development</span>
       </div>
     </div>
@@ -562,8 +589,8 @@ h2 em { font-style: italic; color: var(--leaf); }
   <section class="brief" aria-labelledby="brief-h">
     <div class="section-head">
       <p class="eyebrow">The brief</p>
-      <h2 id="brief-h">What Subhajit <em>needs</em></h2>
-      <p>Subhajit is a chef who wants to sell his food online to two kinds of buyers. Both order in volume and plan ahead, so the website is built around bulk ordering instead of single plates.</p>
+      <h2 id="brief-h">What Edwin <em>needs</em></h2>
+      <p>Edwin is a chef who wants to sell his food online to two kinds of buyers. Both order in volume and plan ahead, so the website is built around bulk ordering instead of single plates.</p>
     </div>
 
     <div class="buyers">
@@ -607,7 +634,7 @@ h2 em { font-style: italic; color: var(--leaf); }
       <div class="course">
         <h3>Design &amp; storefront<span>The look and the pages</span></h3>
         <div class="dishes">
-          <div class="dish"><b>Brand-led design</b><p>Shopify theme styled to Subhajit&rsquo;s brand: logo, colours, fonts and large food photography.</p></div>
+          <div class="dish"><b>Brand-led design</b><p>Shopify theme styled to Edwin&rsquo;s brand: logo, colours, fonts and large food photography.</p></div>
           <div class="dish"><b>Core pages</b><p>Home, About the Chef, Menu, Catering, Corporate Orders, FAQs and Contact.</p></div>
           <div class="dish"><b>Mobile-first build</b><p>Designed and tested for phones, where most buyers browse and order.</p></div>
           <div class="dish"><b>Policy pages</b><p>Terms, privacy, refund &amp; cancellation and delivery policies, from content the client approves.</p></div>
@@ -630,7 +657,7 @@ h2 em { font-style: italic; color: var(--leaf); }
           <div class="dish"><b>Minimum order quantities</b><p>Set per dish, so small orders don&rsquo;t slip through.</p></div>
           <div class="dish"><b>Volume pricing</b><p>Per-unit price drops as the order size goes up.</p></div>
           <div class="dish"><b>Delivery date &amp; time slot</b><p>Buyers pick a slot, with a lead time such as 48 hours&rsquo; notice.</p></div>
-          <div class="dish"><b>Request-a-quote form</b><p>For corporate events and recurring orders, sent straight to Subhajit.</p></div>
+          <div class="dish"><b>Request-a-quote form</b><p>For corporate events and recurring orders, sent straight to Edwin.</p></div>
           <div class="dish"><b>Customer accounts</b><p>Order history and quick reorder for repeat buyers.</p></div>
           <div class="dish"><b>Dedicated landing pages</b><p>One page for catering partners and one for corporate clients.</p></div>
         </div>
@@ -651,7 +678,7 @@ h2 em { font-style: italic; color: var(--leaf); }
         <div class="dishes">
           <div class="dish"><b>Domain &amp; go-live</b><p>Store connected to the client&rsquo;s domain, with test orders run before launch.</p></div>
           <div class="dish"><b>Search &amp; analytics basics</b><p>Page titles and descriptions, Google Analytics and Search Console.</p></div>
-          <div class="dish"><b>WhatsApp chat button</b><p>One tap from any page to Subhajit&rsquo;s WhatsApp number.</p></div>
+          <div class="dish"><b>WhatsApp chat button</b><p>One tap from any page to Edwin&rsquo;s WhatsApp number.</p></div>
           <div class="dish"><b>Training session</b><p>One live session of about an hour, plus a short guide to adding dishes, changing prices and handling orders.</p></div>
           <div class="dish"><b>30 days of support</b><p>Bug fixes and small text or image changes for 30 days after launch.</p></div>
           <div class="dish"><b>Two design revisions</b><p>Two rounds of changes at the design stage before the build begins.</p></div>
@@ -756,10 +783,10 @@ h2 em { font-style: italic; color: var(--leaf); }
       <li><p><b>Payment.</b> Work starts on receipt of the advance. Milestone payments are due within 7 days of each milestone. The website goes live only after the final payment is received.</p></li>
       <li><p><b>Taxes.</b> The fee is exclusive of GST. Where applicable, GST will be charged at the prevailing rate (SAC 998314, IT design and development services).</p></li>
       <li><p><b>Cancellation.</b> The advance is non-refundable once work has started. Payments for completed milestones are non-refundable if the project is cancelled.</p></li>
-      <li><p><b>Ownership of work.</b> On full payment, the website design, setup and content belong to the client. Jnanottam may show the website in a portfolio unless the client asks otherwise in writing.</p></li>
+      <li><p><b>Ownership of work.</b> On full payment, the website design, setup and content belong to the client. We may show the website in our portfolio unless the client asks otherwise in writing.</p></li>
       <li><p><b>Support.</b> 30 days of free support after launch covers bug fixes and small text or image changes. New features, redesigns and maintenance after this period are charged separately.</p></li>
-      <li><p><b>Food business compliance.</b> The client is responsible for food quality and safety, FSSAI licensing, pricing, delivery, GST on food sales and all other legal requirements of the food business. Jnanottam is responsible for the website only.</p></li>
-      <li><p><b>Platform availability.</b> Uptime, features and policies of Shopify, Razorpay and installed apps are controlled by those companies. Jnanottam will help resolve issues but is not liable for outages or changes on their side.</p></li>
+      <li><p><b>Food business compliance.</b> The client is responsible for food quality and safety, FSSAI licensing, pricing, delivery, GST on food sales and all other legal requirements of the food business. Our responsibility is limited to the website.</p></li>
+      <li><p><b>Platform availability.</b> Uptime, features and policies of Shopify, Razorpay and installed apps are controlled by those companies. We will help resolve issues but are not liable for outages or changes on their side.</p></li>
       <li><p><b>Inactive projects.</b> If the client does not respond for more than 30 days, the project may be put on hold, and restarting it may need a revised schedule.</p></li>
     </ol>
   </section>
@@ -771,16 +798,34 @@ h2 em { font-style: italic; color: var(--leaf); }
       <p>To go ahead, sign below and share a copy along with the advance payment of ₹41,500. Work begins on receipt of both.</p>
     </div>
     <div class="sign">
-      <div class="sig"><div class="line"></div><b>For Jnanottam</b><span>Signature &amp; date</span></div>
-      <div class="sig"><div class="line"></div><b>Accepted by Subhajit</b><span>Signature &amp; date</span></div>
+      <div class="sig"><div class="line"></div><b>For <span data-q="company">Your Company Name</span></b><span>Signature &amp; date</span></div>
+      <div class="sig"><div class="line"></div><b>Accepted by Edwin Paul</b><span>Signature &amp; date</span></div>
     </div>
   </section>
 
   <footer class="closing">
-    <em>Thank you for the opportunity, Subhajit.</em>
-    <span class="num">Quotation JN/Q/2026-27/001 &middot; 24 Oct 2026</span>
+    <em>Thank you for the opportunity, Edwin.</em>
+    <span class="num">Quotation <span data-q="quoteNo">Q/2026-27/001</span> &middot; <span data-q="date">24 Oct 2026</span></span>
   </footer>
 
 </main>
+<script>
+  (function () {
+    var q = window.QUOTE || {};
+    var DEFAULT_COMPANY = "Your Company Name";
+    var isDraft = !q.company || q.company.trim() === DEFAULT_COMPANY;
+    if (!q.monogram) q.monogram = isDraft ? "&" : q.company.trim().charAt(0).toUpperCase();
+    document.querySelectorAll("[data-q]").forEach(function (el) {
+      var key = el.getAttribute("data-q");
+      var val = q[key];
+      if (key === "contact" && !val) {
+        if (isDraft) { el.classList.add("is-placeholder"); } else { el.hidden = true; }
+        return;
+      }
+      if (val) el.textContent = val;
+      if (isDraft && (key === "company" || key === "monogram")) el.classList.add("is-placeholder");
+    });
+  })();
+</script>
 </body>
 </html>
